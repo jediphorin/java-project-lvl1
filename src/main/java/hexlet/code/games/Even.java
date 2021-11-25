@@ -20,6 +20,11 @@ public class Even {
             System.out.print("Your answer: ");
             String yourAnswer = scanner.nextLine();
 
+            if (yourAnswer != "yes" || yourAnswer != "no") {
+                System.out.println("'" + yourAnswer + "' is wrong answer ;(");
+                System.exit(0);
+            }
+
             String trueAnswer;
             if (number % 2 == 0) {
                 trueAnswer = "yes";
@@ -30,7 +35,6 @@ public class Even {
             if (yourAnswer.equals(trueAnswer)) {
                 System.out.println("Correct!");
             } else {
-                i = -1;
                 System.out.println("'" + yourAnswer + "' is wrong answer ;(. Correct answer was '" + trueAnswer + "'");
                 System.out.println("Let's try again, " + Cli.name + "!");
                 System.exit(0);
