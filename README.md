@@ -6,5 +6,6 @@
 ![example workflow](https://github.com/jediphorin/java-project-lvl1/actions/workflows/github-actions-demo.yml/badge.svg)
 
 Аскинема с примером запуска игры, 
-победой и поражением игрока. 
+победой и поражением игрока.
+https://asciinema.org/a/ujfQKLm0yJP6Gp40eIGOuC8JX
 
