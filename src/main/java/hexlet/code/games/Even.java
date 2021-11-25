@@ -19,6 +19,7 @@ public class Even {
             System.out.println("Question: " + number);
             System.out.print("Your answer: ");
             String yourAnswer = scanner.nextLine();
+
             String trueAnswer;
             if (number % 2 == 0) {
                 trueAnswer = "yes";
@@ -31,6 +32,8 @@ public class Even {
             } else {
                 i = -1;
                 System.out.println("'" + yourAnswer + "' is wrong answer ;(. Correct answer was '" + trueAnswer + "'");
+                System.out.println("Let's try again, " + Cli.name + "!");
+                System.exit(0);
             }
         }
         System.out.println("Congratulations, " + Cli.name +"!");

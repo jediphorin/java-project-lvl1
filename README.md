@@ -4,3 +4,7 @@
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 
 ![example workflow](https://github.com/jediphorin/java-project-lvl1/actions/workflows/github-actions-demo.yml/badge.svg)
+
+Аскинема с примером запуска игры, 
+победой и поражением игрока. 
+
