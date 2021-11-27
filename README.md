@@ -5,10 +5,12 @@
 
 ![example workflow](https://github.com/jediphorin/java-project-lvl1/actions/workflows/github-actions-demo.yml/badge.svg)
 
-Аскинема с примером запуска игры про чётные числа, 
+Ссылка на аскинему с примером запуска игры про чётные числа, 
 победой и поражением игрока.
 https://asciinema.org/a/ujfQKLm0yJP6Gp40eIGOuC8JX
 
-Аскинема с примером запуска игры про сложение, вычитание и умножение.
+Ссылка на аскинему с примером запуска игры про сложение, вычитание и умножение.
 https://asciinema.org/a/FBmn24HxPVfN5GsTsafvXdWTA
 
+Ссылка на аскинему с примером запуску игры на нахождение наибольшего общего делителя.
+https://asciinema.org/a/SMOZljeSuLiXxbmIOn8LHeWFN

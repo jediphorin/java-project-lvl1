@@ -31,11 +31,12 @@ public class Calc {
         scanner = new Scanner(System.in);
 
         for (int i = 0; i < 3; i++) {
-            int trueResult = 0;
+
             int firstNumber = getRandomNumber();
             char mathAction = getMathActionArray()[getRandomMathematicalAction()];
             int secondNumber = getRandomNumber();
             String mathExpression = firstNumber + " " + mathAction + " " + secondNumber;
+            int trueResult = 0;
 
             switch (mathAction) {
                 case '*':
