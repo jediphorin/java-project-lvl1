@@ -7,7 +7,7 @@ public class App {
 
     public static void main(String[] args) {
 
-        System.out.println("Please enter the game number and press Enter.\n1 - Greet\n2 - Even\n3 - Calc\n4 - GDC\n5 - Progression\n0 - Exit");
+        System.out.println("Please enter the game number and press Enter.\n1 - Greet\n2 - Even\n3 - Calc\n4 - GDC\n5 - Progression\n6 - Prime\n0 - Exit");
         System.out.print("Your choice: ");
         int gameNumber = scanner.nextInt();
         Engine engine = new Engine(gameNumber);

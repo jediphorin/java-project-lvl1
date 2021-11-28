@@ -17,3 +17,6 @@ https://asciinema.org/a/SMOZljeSuLiXxbmIOn8LHeWFN
 
 Ссылка на аскинему с примером запуска игры про прогрессию. 
 https://asciinema.org/a/TxyaA1aaSTmANCjw2sekeyHas
+
+Ссылка на аскинему с примером запуска игры на простоту числа
+https://asciinema.org/a/tAyUOrN7Zt8fbPzZqaGNehrmN

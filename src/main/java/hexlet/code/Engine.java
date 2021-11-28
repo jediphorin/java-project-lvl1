@@ -1,9 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
-import hexlet.code.games.GDC;
-import hexlet.code.games.Progression;
+import hexlet.code.games.*;
 
 public class Engine {
     private int gameNumber;
@@ -26,6 +23,9 @@ public class Engine {
                 gdc.GDCTheGame();
             } else if (gameNumber == 5) {
                 Progression progression = new Progression();
+            } else if (gameNumber == 6) {
+                Prime prime = new Prime();
+                prime.primeTheGame();
             }
         }
     }
