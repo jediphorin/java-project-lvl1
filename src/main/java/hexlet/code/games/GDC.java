@@ -20,7 +20,6 @@ public class GDC {
         System.out.println("Find the greatest common divisor of given numbers.");
 
         for (int i = 0; i < 3; i++) {
-
             int firstNumber = getRandomNumber();
             int secondNumber = getRandomNumber();
             int trueResult = 1;

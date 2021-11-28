@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
 import hexlet.code.games.GDC;
+import hexlet.code.games.Progression;
 
 public class Engine {
     private int gameNumber;
@@ -23,6 +24,8 @@ public class Engine {
             } else if (gameNumber == 4) {
                 GDC gdc = new GDC();
                 gdc.GDCTheGame();
+            } else if (gameNumber == 5) {
+                Progression progression = new Progression();
             }
         }
     }

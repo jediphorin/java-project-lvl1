@@ -12,5 +12,8 @@ https://asciinema.org/a/ujfQKLm0yJP6Gp40eIGOuC8JX
 Ссылка на аскинему с примером запуска игры про сложение, вычитание и умножение.
 https://asciinema.org/a/FBmn24HxPVfN5GsTsafvXdWTA
 
-Ссылка на аскинему с примером запуску игры на нахождение наибольшего общего делителя.
+Ссылка на аскинему с примером запуска игры на нахождение наибольшего общего делителя.
 https://asciinema.org/a/SMOZljeSuLiXxbmIOn8LHeWFN
+
+Ссылка на аскинему с примером запуска игры про прогрессию. 
+https://asciinema.org/a/TxyaA1aaSTmANCjw2sekeyHas
