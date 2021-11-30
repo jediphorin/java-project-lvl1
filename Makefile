@@ -7,7 +7,7 @@ run-dist:
 check-updates:
 	./gradlew dependencyUpdates
 
-make lint:
+lint:
 	./gradlew checkstyleMain
 
 build:

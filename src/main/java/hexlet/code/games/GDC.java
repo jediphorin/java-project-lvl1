@@ -5,21 +5,20 @@ import hexlet.code.Cli;
 import java.util.Random;
 import java.util.Scanner;
 
-public class GDC {
-
-    private Scanner scanner;
+public class GDC extends Games {
 
     //  рандом цифр
     private int getRandomNumber() {
         Random random = new Random();
-        return random.nextInt(100 - 1) + 1;
+        int upperRandomlimit = 100;
+        return random.nextInt(upperRandomlimit - 1) + 1;
     }
 
-    public void GDCTheGame() {
-
+    @Override
+    public void playTheGame() {
         System.out.println("Find the greatest common divisor of given numbers.");
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Games.CYCLES; i++) {
             int firstNumber = getRandomNumber();
             int secondNumber = getRandomNumber();
             int trueResult = 1;
@@ -32,7 +31,7 @@ public class GDC {
                 }
             }
 
-            scanner = new Scanner(System.in);
+            Scanner scanner = new Scanner(System.in);
             System.out.println("Question: " + firstNumber + " " + secondNumber);
             System.out.print("Your answer: ");
             int myResult = scanner.nextInt();
@@ -41,10 +40,9 @@ public class GDC {
                 System.out.println("Correct!");
             } else {
                 System.out.println("'" + myResult + "' is wrong answer ;(. Correct answer was '" + trueResult + "'.");
-                System.out.println("\nLet's try again, " + Cli.name + "!");
-                System.exit(0);
+                Games.fail();
             }
         }
-        System.out.println("\nCongratulations, " + Cli.name +"!");
+        System.out.println("\nCongratulations, " + Cli.getName() + "!");
     }
 }

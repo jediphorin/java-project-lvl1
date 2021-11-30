@@ -5,19 +5,19 @@ import hexlet.code.Cli;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Prime {
-
-    private Scanner scanner;
+public class Prime extends Games {
 
     private int getRandomNumber() {
         Random random = new Random();
-        return random.nextInt(100 - 1) + 1;
+        int upperRandomlimit = 100;
+        return random.nextInt(upperRandomlimit - 1) + 1;
     }
 
-    public void primeTheGame() {
+    @Override
+    public void playTheGame() {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Games.CYCLES; i++) {
             int number = getRandomNumber();
             String trueResult = "yes";
             for (int j = 2; j < number / 2; j++) {
@@ -26,7 +26,7 @@ public class Prime {
                 }
             }
 
-            scanner = new Scanner(System.in);
+            Scanner scanner = new Scanner(System.in);
             System.out.println("Question: " + number);
             System.out.print("Your answer: ");
             String myResult = scanner.nextLine();
@@ -35,10 +35,9 @@ public class Prime {
                 System.out.println("Correct!");
             } else {
                 System.out.println("'" + myResult + "' is wrong answer ;(. Correct answer was '" + trueResult + "'.");
-                System.out.println("\nLet's try again, " + Cli.name + "!");
-                System.exit(0);
+                Games.fail();
             }
         }
-        System.out.println("\nCongratulations, " + Cli.name +"!");
+        System.out.println("\nCongratulations, " + Cli.getName() + "!");
     }
 }

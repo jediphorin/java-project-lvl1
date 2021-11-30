@@ -5,18 +5,20 @@ import hexlet.code.Cli;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Calc {
-
-    private Scanner scanner = new Scanner(System.in);
+public class Calc extends Games {
 
     //  массив действий с геттером
-    private char[] mathActionArray = {'*', '+', '-'};
-    public char[] getMathActionArray() {return mathActionArray;}
+    private final char[] mathActionArray = {'*', '+', '-'};
+
+    private char[] getMathActionArray() {
+        return mathActionArray;
+    }
 
     //  рандом цифр
     private int getRandomNumber() {
         Random random = new Random();
-        return random.nextInt(99 - 1) + 1;
+        int upperRandomlimit = 99;
+        return random.nextInt(upperRandomlimit - 1) + 1;
     }
 
     //  рандом выбора действия
@@ -25,12 +27,12 @@ public class Calc {
         return random.nextInt(getMathActionArray()[getMathActionArray().length - 1] - getMathActionArray()[0]);
     }
 
-    public void calculatorTheGame() {
-
+    @Override
+    public void playTheGame() {
         System.out.println("What is the result of the expression?");
-        scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Games.CYCLES; i++) {
 
             int firstNumber = getRandomNumber();
             char mathAction = getMathActionArray()[getRandomMathematicalAction()];
@@ -60,10 +62,9 @@ public class Calc {
                 System.out.println("Correct!");
             } else {
                 System.out.println("'" + myResult + "' is wrong answer ;(. Correct answer was '" + trueResult + "'.");
-                System.out.println("\nLet's try again, " + Cli.name + "!");
-                System.exit(0);
+                Games.fail();
             }
         }
-        System.out.println("\nCongratulations, " + Cli.name +"!");
+        System.out.println("\nCongratulations, " + Cli.getName() + "!");
     }
 }

@@ -5,18 +5,18 @@ import hexlet.code.Cli;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Progression {
+public class Progression extends Games {
 
-    private Scanner scanner;
     private int[] progression;
 
     public Progression() {
-        progressionTheGame();
     }
 
     private void lengthRandom() {
         Random random = new Random();
-        int result = random.nextInt(10 - 5) + 5;
+        int upperLengthRandomLimit = 10;
+        int lowerLengthRandomLimit = 5;
+        int result = random.nextInt(upperLengthRandomLimit - lowerLengthRandomLimit) + lowerLengthRandomLimit;
         progression = new int[result];
     }
 
@@ -27,18 +27,21 @@ public class Progression {
 
     private int progressionShiftRandom() {
         Random random = new Random();
-        return random.nextInt(6 - 2) + 2;
+        int upperProgressionShiftRandomlimit = 6;
+        return random.nextInt(upperProgressionShiftRandomlimit - 2) + 2;
     }
 
     private int startPositionRandom() {
         Random random = new Random();
-        return random.nextInt(14 - 2) + 2;
+        int upperStartPositionRandomlimit = 14;
+        return random.nextInt(upperStartPositionRandomlimit - 2) + 2;
     }
 
-    private void progressionTheGame() {
+    @Override
+    public void playTheGame() {
         System.out.println("What number is missing in the progression?");
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Games.CYCLES; i++) {
 
             lengthRandom();
             int startProgression = startPositionRandom();
@@ -49,7 +52,7 @@ public class Progression {
             int numberForQuestion = elementForQuestion();
             int trueResult = progression[numberForQuestion];
 
-            scanner = new Scanner(System.in);
+            Scanner scanner = new Scanner(System.in);
             System.out.print("Question: ");
             for (int j = 0; j < progression.length; j++) {
                 if (j != numberForQuestion) {
@@ -58,17 +61,16 @@ public class Progression {
                     System.out.print(".. ");
                 }
             }
-            System.out.print("Your answer: ");
+            System.out.print("\nYour answer: ");
             int myResult = scanner.nextInt();
 
             if (myResult == trueResult) {
                 System.out.println("Correct!");
             } else {
                 System.out.println("'" + myResult + "' is wrong answer ;(. Correct answer was '" + trueResult + "'.");
-                System.out.println("\nLet's try again, " + Cli.name + "!");
-                System.exit(0);
+                Games.fail();
             }
         }
-        System.out.println("\nCongratulations, " + Cli.name +"!");
+        System.out.println("\nCongratulations, " + Cli.getName() + "!");
     }
 }

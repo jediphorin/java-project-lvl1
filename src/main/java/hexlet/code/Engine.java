@@ -1,24 +1,21 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+import hexlet.code.games.GDC;
+import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
 
 import java.util.Scanner;
 
 public class Engine {
 
-    public static Scanner scanner = new Scanner(System.in);
+    public static void executeTheGame() {
 
-//    public Engine(int gameNumber) {
-//        this.gameNumber = gameNumber;
-//    }
-
-    public Engine() {
-    }
-
-    public void executeTheGame() {
-
-        System.out.println("Please enter the game number and press Enter.\n1 - Greet\n2 - Even\n3 - Calc\n4 - GDC\n5 - Progression\n6 - Prime\n0 - Exit");
+        System.out.print("Please enter the game number and press Enter.");
+        System.out.println("\n1 - Greet\n2 - Even\n3 - Calc\n4 - GDC\n5 - Progression\n6 - Prime\n0 - Exit");
         System.out.print("Your choice: ");
+        Scanner scanner = new Scanner(System.in);
         int gameNumber = scanner.nextInt();
 
         if (gameNumber != 0) {
@@ -27,44 +24,27 @@ public class Engine {
 
             switch (gameNumber) {
                 case 2:
-                    Even.evenNumber();
+                    Even even = new Even();
+                    even.playTheGame();
                     break;
                 case 3:
                     Calc calc = new Calc();
-                    calc.calculatorTheGame();
+                    calc.playTheGame();
                     break;
                 case 4:
                     GDC gdc = new GDC();
-                    gdc.GDCTheGame();
+                    gdc.playTheGame();
                     break;
                 case 5:
                     Progression progression = new Progression();
+                    progression.playTheGame();
                     break;
                 case 6:
                     Prime prime = new Prime();
-                    prime.primeTheGame();
+                    prime.playTheGame();
                     break;
                 default:
             }
         }
-
-        /*if (gameNumber != 0 ) {
-            System.out.println("\nWelcome to the Brain Games!");
-            Cli.nameSetting();
-            if (gameNumber == 2) {
-                Even.evenNumber();
-            } else if (gameNumber == 3) {
-                Calc calc = new Calc();
-                calc.calculatorTheGame();
-            } else if (gameNumber == 4) {
-                GDC gdc = new GDC();
-                gdc.GDCTheGame();
-            } else if (gameNumber == 5) {
-                Progression progression = new Progression();
-            } else if (gameNumber == 6) {
-                Prime prime = new Prime();
-                prime.primeTheGame();
-            }
-        }*/
     }
 }
