@@ -5,7 +5,7 @@ import hexlet.code.Cli;
 import java.util.Random;
 import java.util.Scanner;
 
-public final class Prime extends Games {
+public final class Prime {
 
     private int getRandomNumber() {
         final int upperRandomLimit = 100;
@@ -13,8 +13,7 @@ public final class Prime extends Games {
         return random.nextInt(upperRandomLimit - 1) + 1;
     }
 
-    @Override
-    public void playTheGame() {
+    public void playThePrime() {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
         for (int i = 0; i < Games.CYCLES; i++) {
@@ -39,6 +38,6 @@ public final class Prime extends Games {
                 Games.fail();
             }
         }
-        System.out.println("\nCongratulations, " + Cli.getName() + "!");
+        System.out.println("Congratulations, " + Cli.getName() + "!");
     }
 }

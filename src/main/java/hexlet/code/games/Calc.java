@@ -5,7 +5,7 @@ import hexlet.code.Cli;
 import java.util.Random;
 import java.util.Scanner;
 
-public final class Calc extends Games {
+public final class Calc {
 
     //  массив действий с геттером
     private final char[] mathActionArray = {'*', '+', '-'};
@@ -27,8 +27,7 @@ public final class Calc extends Games {
         return random.nextInt(getMathActionArray()[getMathActionArray().length - 1] - getMathActionArray()[0]);
     }
 
-    @Override
-    public void playTheGame() {
+    public void playTheCalc() {
         System.out.println("What is the result of the expression?");
         Scanner scanner = new Scanner(System.in);
 
@@ -66,6 +65,6 @@ public final class Calc extends Games {
                 Games.fail();
             }
         }
-        System.out.println("\nCongratulations, " + Cli.getName() + "!");
+        System.out.println("Congratulations, " + Cli.getName() + "!");
     }
 }

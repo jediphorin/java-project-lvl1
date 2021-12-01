@@ -5,10 +5,9 @@ import hexlet.code.Cli;
 import java.util.Random;
 import java.util.Scanner;
 
-public final class Even extends Games {
+public final class Even {
 
-    @Override
-    public void playTheGame() {
+    public void playTheEven() {
         System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
         Scanner scanner = new Scanner(System.in);
 

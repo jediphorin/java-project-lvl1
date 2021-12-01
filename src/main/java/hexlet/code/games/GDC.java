@@ -5,7 +5,7 @@ import hexlet.code.Cli;
 import java.util.Random;
 import java.util.Scanner;
 
-public final class GDC extends Games {
+public final class GDC {
 
     //  рандом цифр
     private int getRandomNumber() {
@@ -14,8 +14,7 @@ public final class GDC extends Games {
         return random.nextInt(upperRandomLimit - 1) + 1;
     }
 
-    @Override
-    public void playTheGame() {
+    public void playTheGDC() {
         System.out.println("Find the greatest common divisor of given numbers.");
 
         for (int i = 0; i < Games.CYCLES; i++) {
@@ -43,6 +42,6 @@ public final class GDC extends Games {
                 Games.fail();
             }
         }
-        System.out.println("\nCongratulations, " + Cli.getName() + "!");
+        System.out.println("Congratulations, " + Cli.getName() + "!");
     }
 }

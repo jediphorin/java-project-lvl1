@@ -5,7 +5,7 @@ import hexlet.code.Cli;
 import java.util.Random;
 import java.util.Scanner;
 
-public final class Progression extends Games {
+public final class Progression {
 
     private int[] progression;
 
@@ -34,8 +34,7 @@ public final class Progression extends Games {
         return random.nextInt(upperStartPositionRandomLimit - 2) + 2;
     }
 
-    @Override
-    public void playTheGame() {
+    public void playTheProgression() {
         System.out.println("What number is missing in the progression?");
 
         for (int i = 0; i < Games.CYCLES; i++) {
@@ -68,6 +67,6 @@ public final class Progression extends Games {
                 Games.fail();
             }
         }
-        System.out.println("\nCongratulations, " + Cli.getName() + "!");
+        System.out.println("Congratulations, " + Cli.getName() + "!");
     }
 }
