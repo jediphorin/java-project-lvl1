@@ -23,27 +23,28 @@ public class Engine {
             Cli.nameSetting();
 
             switch (gameNumber) {
-                case 2:
+                case 2 -> {
                     Even even = new Even();
                     even.playTheGame();
-                    break;
-                case 3:
+                }
+                case 3 -> {
                     Calc calc = new Calc();
                     calc.playTheGame();
-                    break;
-                case 4:
+                }
+                case 4 -> {
                     GDC gdc = new GDC();
                     gdc.playTheGame();
-                    break;
-                case 5:
+                }
+                case 5 -> {
                     Progression progression = new Progression();
                     progression.playTheGame();
-                    break;
-                case 6:
+                }
+                case 6 -> {
                     Prime prime = new Prime();
                     prime.playTheGame();
-                    break;
-                default:
+                }
+                default -> {
+                }
             }
         }
     }

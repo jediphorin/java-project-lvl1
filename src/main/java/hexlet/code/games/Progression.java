@@ -5,7 +5,7 @@ import hexlet.code.Cli;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Progression extends Games {
+public final class Progression extends Games {
 
     private int[] progression;
 
@@ -27,14 +27,14 @@ public class Progression extends Games {
 
     private int progressionShiftRandom() {
         Random random = new Random();
-        int upperProgressionShiftRandomlimit = 6;
-        return random.nextInt(upperProgressionShiftRandomlimit - 2) + 2;
+        int upperProgressionShiftRandomLimit = 6;
+        return random.nextInt(upperProgressionShiftRandomLimit - 2) + 2;
     }
 
     private int startPositionRandom() {
         Random random = new Random();
-        int upperStartPositionRandomlimit = 14;
-        return random.nextInt(upperStartPositionRandomlimit - 2) + 2;
+        int upperStartPositionRandomLimit = 14;
+        return random.nextInt(upperStartPositionRandomLimit - 2) + 2;
     }
 
     @Override

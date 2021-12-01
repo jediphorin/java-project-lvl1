@@ -5,7 +5,7 @@ import hexlet.code.Cli;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Calc extends Games {
+public final class Calc extends Games {
 
     //  массив действий с геттером
     private final char[] mathActionArray = {'*', '+', '-'};
@@ -17,8 +17,8 @@ public class Calc extends Games {
     //  рандом цифр
     private int getRandomNumber() {
         Random random = new Random();
-        int upperRandomlimit = 99;
-        return random.nextInt(upperRandomlimit - 1) + 1;
+        int upperRandomLimit = 99;
+        return random.nextInt(upperRandomLimit - 1) + 1;
     }
 
     //  рандом выбора действия
@@ -41,17 +41,10 @@ public class Calc extends Games {
             int trueResult = 0;
 
             switch (mathAction) {
-                case '*':
-                    trueResult = firstNumber * secondNumber;
-                    break;
-                case '+':
-                    trueResult = firstNumber + secondNumber;
-                    break;
-                case '-':
-                    trueResult = firstNumber - secondNumber;
-                    break;
-                default:
-                    System.out.println("PROBLEM");
+                case '*' -> trueResult = firstNumber * secondNumber;
+                case '+' -> trueResult = firstNumber + secondNumber;
+                case '-' -> trueResult = firstNumber - secondNumber;
+                default -> System.out.println("PROBLEM");
             }
 
             System.out.println("Question: " + mathExpression);

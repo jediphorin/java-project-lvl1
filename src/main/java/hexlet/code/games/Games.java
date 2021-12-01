@@ -4,11 +4,11 @@ import hexlet.code.Cli;
 
 public abstract class Games {
 
-    public static final int CYCLES = 3;
+    static final int CYCLES = 3;
 
-    public abstract void playTheGame();
+    abstract void playTheGame();
 
-    protected static final void fail() {
+    protected static void fail() {
         System.out.println("\nLet's try again, " + Cli.getName() + "!");
         System.exit(0);
     }

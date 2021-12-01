@@ -5,12 +5,12 @@ import hexlet.code.Cli;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Prime extends Games {
+public final class Prime extends Games {
 
     private int getRandomNumber() {
         Random random = new Random();
-        int upperRandomlimit = 100;
-        return random.nextInt(upperRandomlimit - 1) + 1;
+        int upperRandomLimit = 100;
+        return random.nextInt(upperRandomLimit - 1) + 1;
     }
 
     @Override
@@ -23,6 +23,7 @@ public class Prime extends Games {
             for (int j = 2; j < number / 2; j++) {
                 if (number % j == 0) {
                     trueResult = "no";
+                    break;
                 }
             }
 

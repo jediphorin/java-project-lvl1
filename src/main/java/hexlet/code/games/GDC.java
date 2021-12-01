@@ -5,13 +5,13 @@ import hexlet.code.Cli;
 import java.util.Random;
 import java.util.Scanner;
 
-public class GDC extends Games {
+public final class GDC extends Games {
 
     //  рандом цифр
     private int getRandomNumber() {
         Random random = new Random();
-        int upperRandomlimit = 100;
-        return random.nextInt(upperRandomlimit - 1) + 1;
+        int upperRandomLimit = 100;
+        return random.nextInt(upperRandomLimit - 1) + 1;
     }
 
     @Override

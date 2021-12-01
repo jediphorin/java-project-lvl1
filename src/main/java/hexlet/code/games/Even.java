@@ -5,22 +5,12 @@ import hexlet.code.Cli;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Even extends Games {
-
-    private static Scanner scanner;
-
-    public static Scanner getScanner() {
-        return scanner;
-    }
-
-    public static void setScanner(Scanner scanner) {
-        Even.scanner = scanner;
-    }
+public final class Even extends Games {
 
     @Override
     public void playTheGame() {
         System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
-        scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         for (int i = 0; i < Games.CYCLES; i++) {
             Random random = new Random();
