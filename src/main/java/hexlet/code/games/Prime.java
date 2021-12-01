@@ -7,13 +7,13 @@ import java.util.Scanner;
 
 public final class Prime {
 
-    private int getRandomNumber() {
+    private static int getRandomNumber() {
         final int upperRandomLimit = 100;
         Random random = new Random();
         return random.nextInt(upperRandomLimit - 1) + 1;
     }
 
-    public void playThePrime() {
+    public static void playThePrime() {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
         for (int i = 0; i < Games.CYCLES; i++) {

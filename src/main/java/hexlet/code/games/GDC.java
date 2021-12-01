@@ -8,13 +8,13 @@ import java.util.Scanner;
 public final class GDC {
 
     //  рандом цифр
-    private int getRandomNumber() {
+    private static int getRandomNumber() {
         final int upperRandomLimit = 100;
         Random random = new Random();
         return random.nextInt(upperRandomLimit - 1) + 1;
     }
 
-    public void playTheGDC() {
+    public static void playTheGDC() {
         System.out.println("Find the greatest common divisor of given numbers.");
 
         for (int i = 0; i < Games.CYCLES; i++) {

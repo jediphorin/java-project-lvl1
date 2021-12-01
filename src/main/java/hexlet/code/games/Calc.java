@@ -8,26 +8,26 @@ import java.util.Scanner;
 public final class Calc {
 
     //  массив действий с геттером
-    private final char[] mathActionArray = {'*', '+', '-'};
+    private static final char[] mathActionArray = {'*', '+', '-'};
 
-    private char[] getMathActionArray() {
+    private static char[] getMathActionArray() {
         return mathActionArray;
     }
 
     //  рандом цифр
-    private int getRandomNumber() {
+    private static int getRandomNumber() {
         Random random = new Random();
         final int upperRandomLimit = 99;
         return random.nextInt(upperRandomLimit - 1) + 1;
     }
 
     //  рандом выбора действия
-    private int getRandomMathematicalAction() {
+    private static int getRandomMathematicalAction() {
         Random random = new Random();
         return random.nextInt(getMathActionArray()[getMathActionArray().length - 1] - getMathActionArray()[0]);
     }
 
-    public void playTheCalc() {
+    public static void playTheCalc() {
         System.out.println("What is the result of the expression?");
         Scanner scanner = new Scanner(System.in);
 

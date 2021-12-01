@@ -29,24 +29,19 @@ public class Engine {
 
             switch (gameNumber) {
                 case 2 -> {
-                    Even even = new Even();
-                    even.playTheEven();
+                    Even.playTheEven();
                 }
                 case CALC_NUMBER -> {
-                    Calc calc = new Calc();
-                    calc.playTheCalc();
+                    Calc.playTheCalc();
                 }
                 case GDC_NUMBER -> {
-                    GDC gdc = new GDC();
-                    gdc.playTheGDC();
+                    GDC.playTheGDC();
                 }
                 case PROGRESSION_NUMBER -> {
-                    Progression progression = new Progression();
-                    progression.playTheProgression();
+                    Progression.playTheProgression();
                 }
                 case PRIME_NUMBER -> {
-                    Prime prime = new Prime();
-                    prime.playThePrime();
+                    Prime.playThePrime();
                 }
                 default -> {
                 }

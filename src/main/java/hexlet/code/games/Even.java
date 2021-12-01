@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public final class Even {
 
-    public void playTheEven() {
+    public static void playTheEven() {
         System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
         Scanner scanner = new Scanner(System.in);
 

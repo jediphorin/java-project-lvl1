@@ -7,9 +7,9 @@ import java.util.Scanner;
 
 public final class Progression {
 
-    private int[] progression;
+    private static int[] progression;
 
-    private void lengthRandom() {
+    private static void lengthRandom() {
         final int upperLengthLimit = 10;
         final int lowerLengthLimit = 5;
         Random random = new Random();
@@ -17,24 +17,24 @@ public final class Progression {
         progression = new int[result];
     }
 
-    private int elementForQuestion() {
+    private static int elementForQuestion() {
         Random random = new Random();
         return random.nextInt(progression.length - 1);
     }
 
-    private int progressionShiftRandom() {
+    private static int progressionShiftRandom() {
         final int upperProgressionShiftRandomLimit = 6;
         Random random = new Random();
         return random.nextInt(upperProgressionShiftRandomLimit - 2) + 2;
     }
 
-    private int startPositionRandom() {
+    private static int startPositionRandom() {
         final int upperStartPositionRandomLimit = 14;
         Random random = new Random();
         return random.nextInt(upperStartPositionRandomLimit - 2) + 2;
     }
 
-    public void playTheProgression() {
+    public static void playTheProgression() {
         System.out.println("What number is missing in the progression?");
 
         for (int i = 0; i < Games.CYCLES; i++) {
