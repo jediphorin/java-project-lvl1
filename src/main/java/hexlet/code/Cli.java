@@ -10,8 +10,8 @@ public class Cli {
         return name;
     }
 
-    public static void setName(String name) {
-        Cli.name = name;
+    public static void setName(String inputName) {
+        Cli.name = inputName;
     }
 
     public static void nameSetting() {

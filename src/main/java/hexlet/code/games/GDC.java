@@ -9,8 +9,8 @@ public final class GDC extends Games {
 
     //  рандом цифр
     private int getRandomNumber() {
+        final int upperRandomLimit = 100;
         Random random = new Random();
-        int upperRandomLimit = 100;
         return random.nextInt(upperRandomLimit - 1) + 1;
     }
 

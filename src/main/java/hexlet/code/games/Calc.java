@@ -17,7 +17,7 @@ public final class Calc extends Games {
     //  рандом цифр
     private int getRandomNumber() {
         Random random = new Random();
-        int upperRandomLimit = 99;
+        final int upperRandomLimit = 99;
         return random.nextInt(upperRandomLimit - 1) + 1;
     }
 
@@ -41,10 +41,18 @@ public final class Calc extends Games {
             int trueResult = 0;
 
             switch (mathAction) {
-                case '*' -> trueResult = firstNumber * secondNumber;
-                case '+' -> trueResult = firstNumber + secondNumber;
-                case '-' -> trueResult = firstNumber - secondNumber;
-                default -> System.out.println("PROBLEM");
+                case '*' -> {
+                    trueResult = firstNumber * secondNumber;
+                }
+                case '+' -> {
+                    trueResult = firstNumber + secondNumber;
+                }
+                case '-' -> {
+                    trueResult = firstNumber - secondNumber;
+                }
+                default -> {
+                    System.out.println("PROBLEM");
+                }
             }
 
             System.out.println("Question: " + mathExpression);

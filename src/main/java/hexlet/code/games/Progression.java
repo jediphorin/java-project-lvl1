@@ -9,14 +9,11 @@ public final class Progression extends Games {
 
     private int[] progression;
 
-    public Progression() {
-    }
-
     private void lengthRandom() {
+        final int upperLengthLimit = 10;
+        final int lowerLengthLimit = 5;
         Random random = new Random();
-        int upperLengthRandomLimit = 10;
-        int lowerLengthRandomLimit = 5;
-        int result = random.nextInt(upperLengthRandomLimit - lowerLengthRandomLimit) + lowerLengthRandomLimit;
+        int result = random.nextInt(upperLengthLimit - lowerLengthLimit) + lowerLengthLimit;
         progression = new int[result];
     }
 
@@ -26,14 +23,14 @@ public final class Progression extends Games {
     }
 
     private int progressionShiftRandom() {
+        final int upperProgressionShiftRandomLimit = 6;
         Random random = new Random();
-        int upperProgressionShiftRandomLimit = 6;
         return random.nextInt(upperProgressionShiftRandomLimit - 2) + 2;
     }
 
     private int startPositionRandom() {
+        final int upperStartPositionRandomLimit = 14;
         Random random = new Random();
-        int upperStartPositionRandomLimit = 14;
         return random.nextInt(upperStartPositionRandomLimit - 2) + 2;
     }
 

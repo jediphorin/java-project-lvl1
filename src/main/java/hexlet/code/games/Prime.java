@@ -8,8 +8,8 @@ import java.util.Scanner;
 public final class Prime extends Games {
 
     private int getRandomNumber() {
+        final int upperRandomLimit = 100;
         Random random = new Random();
-        int upperRandomLimit = 100;
         return random.nextInt(upperRandomLimit - 1) + 1;
     }
 

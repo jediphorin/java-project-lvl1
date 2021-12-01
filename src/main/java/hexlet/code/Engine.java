@@ -10,6 +10,11 @@ import java.util.Scanner;
 
 public class Engine {
 
+    static final int CALC_NUMBER = 3;
+    static final int GDC_NUMBER = 4;
+    static final int PROGRESSION_NUMBER = 5;
+    static final int PRIME_NUMBER = 6;
+
     public static void executeTheGame() {
 
         System.out.print("Please enter the game number and press Enter.");
@@ -27,19 +32,19 @@ public class Engine {
                     Even even = new Even();
                     even.playTheGame();
                 }
-                case 3 -> {
+                case CALC_NUMBER -> {
                     Calc calc = new Calc();
                     calc.playTheGame();
                 }
-                case 4 -> {
+                case GDC_NUMBER -> {
                     GDC gdc = new GDC();
                     gdc.playTheGame();
                 }
-                case 5 -> {
+                case PROGRESSION_NUMBER -> {
                     Progression progression = new Progression();
                     progression.playTheGame();
                 }
-                case 6 -> {
+                case PRIME_NUMBER -> {
                     Prime prime = new Prime();
                     prime.playTheGame();
                 }
