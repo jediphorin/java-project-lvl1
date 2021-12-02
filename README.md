@@ -7,16 +7,16 @@
 
 Ссылка на аскинему с примером запуска игры про чётные числа, 
 победой и поражением игрока.
-https://asciinema.org/a/c4G6MEx19cIPvdWk1sTQv5xIf
+https://asciinema.org/a/rz3Ihzv9UYpDQVsBkiRtZR6yG
 
 Ссылка на аскинему с примером запуска игры про сложение, вычитание и умножение.
-https://asciinema.org/a/iPxrpnsbhqQUoCKK0INtyNTVI
+https://asciinema.org/a/U6HXKmqGyxEtOepkTJlhVc1Fy
 
 Ссылка на аскинему с примером запуска игры на нахождение наибольшего общего делителя.
-https://asciinema.org/a/fwcqe8ykUfheQrjUFAeQI01Qx
+https://asciinema.org/a/5w1lXsLVvLTkTujfljqnTKs3B
 
 Ссылка на аскинему с примером запуска игры про прогрессию.
-https://asciinema.org/a/eWoHLflR2hkElfVxRScnug4qD
+https://asciinema.org/a/BXpflu25OBMPjBQOpQCpiwEIk
 
 Ссылка на аскинему с примером запуска игры на простоту числа
-https://asciinema.org/a/8GVFCQMMn5aWtBHCGZzLiOjcq
+https://asciinema.org/a/0MrjfisRFO2LhsM0VOfPpQGi1
