@@ -8,10 +8,10 @@ import java.util.Scanner;
 public final class Calc {
 
     //  массив действий с геттером
-    private static final char[] mathActionArray = {'*', '+', '-'};
+    private static final char[] MATH_ACTION_ARRAY = {'*', '+', '-'};
 
     private static char[] getMathActionArray() {
-        return mathActionArray;
+        return MATH_ACTION_ARRAY;
     }
 
     //  рандом цифр
