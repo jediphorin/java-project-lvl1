@@ -31,6 +31,11 @@ public final class Prime {
             System.out.print("Your answer: ");
             String myResult = scanner.nextLine();
 
+            if (!myResult.equals("yes") && !myResult.equals("no")) {
+                System.out.println("'" + myResult + "' is wrong answer ;(");
+                System.exit(0);
+            }
+
             if (myResult.equals(trueResult)) {
                 System.out.println("Correct!");
             } else {
