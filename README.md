@@ -5,18 +5,12 @@
 
 ![example workflow](https://github.com/jediphorin/java-project-lvl1/actions/workflows/github-actions-demo.yml/badge.svg)
 
-Ссылка на аскинему с примером запуска игры про чётные числа, 
-победой и поражением игрока.
-https://asciinema.org/a/rz3Ihzv9UYpDQVsBkiRtZR6yG
+<a href="https://asciinema.org/a/rz3Ihzv9UYpDQVsBkiRtZR6yG" target="_blank"><img src="https://asciinema.org/a/rz3Ihzv9UYpDQVsBkiRtZR6yG.svg" />аскинема с примером запуска игры про чётные числа, с победой и поражением игрока</a>
 
-Ссылка на аскинему с примером запуска игры про сложение, вычитание и умножение.
-https://asciinema.org/a/U6HXKmqGyxEtOepkTJlhVc1Fy
+<a href="https://asciinema.org/a/U6HXKmqGyxEtOepkTJlhVc1Fy" target="_blank"><img src="https://asciinema.org/a/U6HXKmqGyxEtOepkTJlhVc1Fy.svg" />аскинема с примером запуска игры про сложение, вычитание и умножение</a>
 
-Ссылка на аскинему с примером запуска игры на нахождение наибольшего общего делителя.
-https://asciinema.org/a/5w1lXsLVvLTkTujfljqnTKs3B
+<a href="https://asciinema.org/a/5w1lXsLVvLTkTujfljqnTKs3B" target="_blank"><img src="https://asciinema.org/a/5w1lXsLVvLTkTujfljqnTKs3B.svg" />аскинема с примером запуска игры на нахождение наибольшего общего делителя</a>
 
-Ссылка на аскинему с примером запуска игры про прогрессию.
-https://asciinema.org/a/BXpflu25OBMPjBQOpQCpiwEIk
+<a href="https://asciinema.org/a/BXpflu25OBMPjBQOpQCpiwEIk" target="_blank"><img src="https://asciinema.org/a/BXpflu25OBMPjBQOpQCpiwEIk.svg" />аскинема с примером запуска игры про прогрессию</a>
 
-Ссылка на аскинему с примером запуска игры на простоту числа
-https://asciinema.org/a/0MrjfisRFO2LhsM0VOfPpQGi1
+<a href="https://asciinema.org/a/0MrjfisRFO2LhsM0VOfPpQGi1" target="_blank"><img src="https://asciinema.org/a/0MrjfisRFO2LhsM0VOfPpQGi1.svg" />аскинема с примером запуска игры на простоту числа</a>
