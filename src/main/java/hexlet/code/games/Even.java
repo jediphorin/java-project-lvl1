@@ -1,42 +1,26 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
+import hexlet.code.Engine;
 
 import java.util.Random;
-import java.util.Scanner;
 
-public final class Even {
+public class Even {
 
-    public static void playTheEven() {
-        System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
-        Scanner scanner = new Scanner(System.in);
+    public static void theEven() {
+        final String rulesEven = "Answer 'yes' if number even otherwise answer 'no'.";
+        String[][] result = Engine.createTheArrayForQuestionsAndTrueAnswers();
 
-        for (int i = 0; i < Games.CYCLES; i++) {
+        for (int i = 0; i < Engine.CYCLES; i++) {
             Random random = new Random();
             int number = random.nextInt();
-            System.out.println("Question: " + number);
-            System.out.print("Your answer: ");
-            String yourAnswer = scanner.nextLine();
+            result[i][0] = String.valueOf(number);
 
-            if (!yourAnswer.equals("yes") && !yourAnswer.equals("no")) {
-                System.out.println("'" + yourAnswer + "' is wrong answer ;(");
-                System.exit(0);
-            }
-
-            String trueAnswer;
             if (number % 2 == 0) {
-                trueAnswer = "yes";
+                result[i][1] = "yes";
             } else {
-                trueAnswer = "no";
-            }
-
-            if (yourAnswer.equals(trueAnswer)) {
-                System.out.println("Correct!");
-            } else {
-                System.out.println("'" + yourAnswer + "' is wrong answer ;(. Correct answer was '" + trueAnswer + "'");
-                Games.fail();
+                result[i][1] = "no";
             }
         }
-        System.out.println("Congratulations, " + Cli.getName() + "!");
+        Engine.theGame(result, rulesEven);
     }
 }

@@ -1,51 +1,40 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
-import hexlet.code.games.GDC;
-import hexlet.code.games.Progression;
-import hexlet.code.games.Prime;
-
 import java.util.Scanner;
 
 public class Engine {
 
-    static final int CALC_NUMBER = 3;
-    static final int GDC_NUMBER = 4;
-    static final int PROGRESSION_NUMBER = 5;
-    static final int PRIME_NUMBER = 6;
+    public static final int CYCLES = 3;
 
-    public static void executeTheGame() {
-
-        System.out.print("Please enter the game number and press Enter.");
-        System.out.println("\n1 - Greet\n2 - Even\n3 - Calc\n4 - GDC\n5 - Progression\n6 - Prime\n0 - Exit");
-        System.out.print("Your choice: ");
+    public static void theGame(String[][] qna, String rules) {
+        System.out.println(rules);
         Scanner scanner = new Scanner(System.in);
-        int gameNumber = scanner.nextInt();
+        for (int i = 0; i < CYCLES; i++) {
+            System.out.println("Question: " + qna[i][0]);
+            System.out.print("Your answer: ");
+            String myResult = scanner.nextLine();
 
-        if (gameNumber != 0) {
-            System.out.println("\nWelcome to the Brain Games!");
-            Cli.nameSetting();
-
-            switch (gameNumber) {
-                case 2 -> {
-                    Even.playTheEven();
-                }
-                case CALC_NUMBER -> {
-                    Calc.playTheCalc();
-                }
-                case GDC_NUMBER -> {
-                    GDC.playTheGDC();
-                }
-                case PROGRESSION_NUMBER -> {
-                    Progression.playTheProgression();
-                }
-                case PRIME_NUMBER -> {
-                    Prime.playThePrime();
-                }
-                default -> {
+            if ((qna[i][1].equals("yes") || qna[i][1].equals("no"))) {
+                if (!myResult.equals("yes") && !myResult.equals("no")) {
+                    System.out.println("'" + myResult + "' is wrong answer ;(");
+                    System.exit(0);
                 }
             }
+
+            if (myResult.equals(qna[i][1])) {
+                System.out.println("Correct!");
+            } else {
+                System.out.println("'" + myResult + "' is wrong answer ;(. Correct answer was '" + qna[i][1] + "'");
+                System.out.println("Let's try again, " + Cli.getName() + "!");
+                System.exit(0);
+            }
         }
+        System.out.println("Congratulations, " + Cli.getName() + "!");
+    }
+
+    public static String[][] createTheArrayForQuestionsAndTrueAnswers() {
+        final int questions = 3;
+        final int answers = 2;
+        return new String[questions][answers];
     }
 }

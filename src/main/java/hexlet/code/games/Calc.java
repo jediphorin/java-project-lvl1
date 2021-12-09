@@ -1,18 +1,10 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
+import hexlet.code.Engine;
 
 import java.util.Random;
-import java.util.Scanner;
 
-public final class Calc {
-
-    //  массив действий с геттером
-    private static final char[] MATH_ACTION_ARRAY = {'*', '+', '-'};
-
-    private static char[] getMathActionArray() {
-        return MATH_ACTION_ARRAY;
-    }
+public class Calc {
 
     //  рандом цифр
     private static int getRandomNumber() {
@@ -21,20 +13,18 @@ public final class Calc {
         return random.nextInt(upperRandomLimit - 1) + 1;
     }
 
-    //  рандом выбора действия
-    private static int getRandomMathematicalAction() {
-        Random random = new Random();
-        return random.nextInt(getMathActionArray()[getMathActionArray().length - 1] - getMathActionArray()[0]);
-    }
+    public static void theCalc() {
+        final String rulesCalc = "What is the result of the expression?";
+        final char[] mathActionArray = {'*', '+', '-'};
+        String[][] result = Engine.createTheArrayForQuestionsAndTrueAnswers();
 
-    public static void playTheCalc() {
-        System.out.println("What is the result of the expression?");
-        Scanner scanner = new Scanner(System.in);
+        for (int i = 0; i < Engine.CYCLES; i++) {
 
-        for (int i = 0; i < Games.CYCLES; i++) {
+            Random random = new Random();
+            int mathActionElement = random.nextInt(mathActionArray[mathActionArray.length - 1] - mathActionArray[0]);
+            char mathAction = mathActionArray[mathActionElement];
 
             int firstNumber = getRandomNumber();
-            char mathAction = getMathActionArray()[getRandomMathematicalAction()];
             int secondNumber = getRandomNumber();
             String mathExpression = firstNumber + " " + mathAction + " " + secondNumber;
             int trueResult = 0;
@@ -49,22 +39,11 @@ public final class Calc {
                 case '-' -> {
                     trueResult = firstNumber - secondNumber;
                 }
-                default -> {
-                    System.out.println("PROBLEM");
-                }
+                default -> System.out.println("PROBLEM");
             }
-
-            System.out.println("Question: " + mathExpression);
-            System.out.print("Your answer: ");
-            int myResult = scanner.nextInt();
-
-            if (myResult == trueResult) {
-                System.out.println("Correct!");
-            } else {
-                System.out.println("'" + myResult + "' is wrong answer ;(. Correct answer was '" + trueResult + "'.");
-                Games.fail();
-            }
+            result[i][0] = mathExpression;
+            result[i][1] = String.valueOf(trueResult);
         }
-        System.out.println("Congratulations, " + Cli.getName() + "!");
+        Engine.theGame(result, rulesCalc);
     }
 }

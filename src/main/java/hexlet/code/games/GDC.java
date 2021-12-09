@@ -1,11 +1,10 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
+import hexlet.code.Engine;
 
 import java.util.Random;
-import java.util.Scanner;
 
-public final class GDC {
+public class GDC {
 
     //  рандом цифр
     private static int getRandomNumber() {
@@ -14,34 +13,25 @@ public final class GDC {
         return random.nextInt(upperRandomLimit - 1) + 1;
     }
 
-    public static void playTheGDC() {
-        System.out.println("Find the greatest common divisor of given numbers.");
+    public static void theGDC() {
+        final String rulesGdc = "Find the greatest common divisor of given numbers.";
+        String[][] result = Engine.createTheArrayForQuestionsAndTrueAnswers();
 
-        for (int i = 0; i < Games.CYCLES; i++) {
+        for (int i = 0; i < Engine.CYCLES; i++) {
             int firstNumber = getRandomNumber();
             int secondNumber = getRandomNumber();
-            int trueResult = 1;
+            result[i][0] = firstNumber + " " + secondNumber;
+            int trueResult;
             int min = Math.min(firstNumber, secondNumber);
 
             for (int j = min; j > 0; j--) {
                 if (firstNumber % j == 0 && secondNumber % j == 0) {
                     trueResult = j;
+                    result[i][1] = String.valueOf(trueResult);
                     break;
                 }
             }
-
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Question: " + firstNumber + " " + secondNumber);
-            System.out.print("Your answer: ");
-            int myResult = scanner.nextInt();
-
-            if (myResult == trueResult) {
-                System.out.println("Correct!");
-            } else {
-                System.out.println("'" + myResult + "' is wrong answer ;(. Correct answer was '" + trueResult + "'.");
-                Games.fail();
-            }
         }
-        System.out.println("Congratulations, " + Cli.getName() + "!");
+        Engine.theGame(result, rulesGdc);
     }
 }
