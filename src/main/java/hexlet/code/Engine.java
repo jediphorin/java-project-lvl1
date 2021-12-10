@@ -12,26 +12,13 @@ public class Engine {
         Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < CYCLES; i++) {
             String myResult = typingMyAnswer(qna, i, scanner);
-//            System.out.println("Question: " + qna[i][0]);
-//            System.out.print("Your answer: ");
-//            String myResult = scanner.nextLine();
-
             incorrectStringChecking(qna, i, myResult);
-            /*if ((qna[i][1].equals("yes") || qna[i][1].equals("no"))) {
-                if (!myResult.equals("yes") && !myResult.equals("no")) {
-                    System.out.println("'" + myResult + "' is wrong answer ;(");
-                    System.exit(0);
-                }
-            }*/
 
             if (myResult.equals(qna[i][1])) {
                 System.out.println("Correct!");
             } else {
                 String correctAnswer = qna[i][1];
                 fail(myResult, correctAnswer);
-//                System.out.println("'" + myResult + "' is wrong answer ;(. Correct answer was '" + qna[i][1] + "'");
-//                System.out.println("Let's try again, " + Cli.getName() + "!");
-//                System.exit(0);
             }
         }
         System.out.println("Congratulations, " + Cli.getName() + "!");

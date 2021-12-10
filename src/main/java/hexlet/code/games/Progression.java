@@ -60,18 +60,21 @@ public class Progression {
 
     private static void fillTheQuestions(int[] progression, int indexForQuestion, String[][] result, int i) {
         for (int j = 0; j < progression.length; j++) {
-            if (indexForQuestion != j) {
-                if (j != 0) {
-                    result[i][0] = result[i][0] + (" " + progression[j]);
-                } else {
-                    result[i][0] = String.valueOf(progression[j]);
-                }
+            fillTheQuestionsIf(progression, indexForQuestion, result, i, j);
+        }
+    }
+    private static void fillTheQuestionsIf(int[] progression, int indexForQuestion, String[][] result, int i, int j) {
+        if (indexForQuestion != j) {
+            if (j != 0) {
+                result[i][0] = result[i][0] + (" " + progression[j]);
             } else {
-                if (j != 0) {
-                    result[i][0] = result[i][0] + " ..";
-                } else {
-                    result[i][0] = "..";
-                }
+                result[i][0] = String.valueOf(progression[j]);
+            }
+        } else {
+            if (j != 0) {
+                result[i][0] = result[i][0] + " ..";
+            } else {
+                result[i][0] = "..";
             }
         }
     }

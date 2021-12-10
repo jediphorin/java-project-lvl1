@@ -17,15 +17,6 @@ public class GDC {
             result[i][0] = firstNumber + " " + secondNumber;
 
             calculatingTheAnswer(firstNumber, secondNumber, result, i);
-            /*int min = Math.min(firstNumber, secondNumber);
-            int trueResult;
-            for (int j = min; j > 0; j--) {
-                if (firstNumber % j == 0 && secondNumber % j == 0) {
-                    trueResult = j;
-                    result[i][1] = String.valueOf(trueResult);
-                    break;
-                }
-            }*/
         }
         Engine.theGame(result, rulesGdc);
     }
@@ -39,12 +30,5 @@ public class GDC {
                 break;
             }
         }
-    }
-
-    //  !УДАЛИТЬ!
-    private static int numbersRandom() {
-        final int upperRandomLimit = 100;
-        final int lowerRandomLimit = 1;
-        return Engine.randomNumber(upperRandomLimit, lowerRandomLimit);
     }
 }
