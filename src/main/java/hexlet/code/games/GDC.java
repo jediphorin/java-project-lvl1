@@ -15,17 +15,36 @@ public class GDC {
             int secondNumber = Engine.randomNumber(upperRandomLimit, lowerRandomLimit);
 
             result[i][0] = firstNumber + " " + secondNumber;
-            int trueResult;
-            int min = Math.min(firstNumber, secondNumber);
 
+            calculatingTheAnswer(firstNumber, secondNumber, result, i);
+            /*int min = Math.min(firstNumber, secondNumber);
+            int trueResult;
             for (int j = min; j > 0; j--) {
                 if (firstNumber % j == 0 && secondNumber % j == 0) {
                     trueResult = j;
                     result[i][1] = String.valueOf(trueResult);
                     break;
                 }
-            }
+            }*/
         }
         Engine.theGame(result, rulesGdc);
+    }
+
+    private static void calculatingTheAnswer(int firstNumber, int secondNumber, String[][] result, int i) {
+        int trueResult;
+        for (int min = Math.min(firstNumber, secondNumber); min > 0; min--) {
+            if (firstNumber % min == 0 && secondNumber % min == 0) {
+                trueResult = min;
+                result[i][1] = String.valueOf(trueResult);
+                break;
+            }
+        }
+    }
+
+    //  !УДАЛИТЬ!
+    private static int numbersRandom() {
+        final int upperRandomLimit = 100;
+        final int lowerRandomLimit = 1;
+        return Engine.randomNumber(upperRandomLimit, lowerRandomLimit);
     }
 }

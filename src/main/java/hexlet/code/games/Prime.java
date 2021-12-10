@@ -15,15 +15,19 @@ public class Prime {
             int number = Engine.randomNumber(upperRandomLimit, lowerRandomLimit);
 
             result[i][0] = String.valueOf(number);
-            String trueResult = "yes";
-            for (int j = 2; j < number / 2; j++) {
-                if (number % j == 0) {
-                    trueResult = "no";
-                    break;
-                }
-            }
-            result[i][1] = trueResult;
+            result[i][1] = gettingTheCorrectAnswer(number);
         }
         Engine.theGame(result, rulesPrime);
+    }
+
+    private static String gettingTheCorrectAnswer(int number) {
+        String trueResult = "yes";
+        for (int j = 2; j < number / 2; j++) {
+            if (number % j == 0) {
+                trueResult = "no";
+                break;
+            }
+        }
+        return trueResult;
     }
 }
