@@ -2,24 +2,18 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
-
 public class GDC {
-
-    //  рандом цифр
-    private static int getRandomNumber() {
-        final int upperRandomLimit = 100;
-        Random random = new Random();
-        return random.nextInt(upperRandomLimit - 1) + 1;
-    }
 
     public static void theGDC() {
         final String rulesGdc = "Find the greatest common divisor of given numbers.";
         String[][] result = Engine.createTheArrayForQuestionsAndTrueAnswers();
 
         for (int i = 0; i < Engine.CYCLES; i++) {
-            int firstNumber = getRandomNumber();
-            int secondNumber = getRandomNumber();
+            final int upperRandomLimit = 100;
+            final int lowerRandomLimit = 1;
+            int firstNumber = Engine.randomNumber(upperRandomLimit, lowerRandomLimit);
+            int secondNumber = Engine.randomNumber(upperRandomLimit, lowerRandomLimit);
+
             result[i][0] = firstNumber + " " + secondNumber;
             int trueResult;
             int min = Math.min(firstNumber, secondNumber);

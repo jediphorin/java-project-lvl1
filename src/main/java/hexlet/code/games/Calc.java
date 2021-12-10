@@ -2,16 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
-
 public class Calc {
-
-    //  рандом цифр
-    private static int getRandomNumber() {
-        Random random = new Random();
-        final int upperRandomLimit = 99;
-        return random.nextInt(upperRandomLimit - 1) + 1;
-    }
 
     public static void theCalc() {
         final String rulesCalc = "What is the result of the expression?";
@@ -20,15 +11,19 @@ public class Calc {
 
         for (int i = 0; i < Engine.CYCLES; i++) {
 
-            Random random = new Random();
-            int mathActionElement = random.nextInt(mathActionArray[mathActionArray.length - 1] - mathActionArray[0]);
+            final int upperMathActionLimit = mathActionArray.length - 1;
+            final int lowerMathActionLimit = 0;
+            int mathActionElement = Engine.randomNumber(upperMathActionLimit, lowerMathActionLimit);
             char mathAction = mathActionArray[mathActionElement];
 
-            int firstNumber = getRandomNumber();
-            int secondNumber = getRandomNumber();
-            String mathExpression = firstNumber + " " + mathAction + " " + secondNumber;
-            int trueResult = 0;
+            final int upperRandomLimit = 99;
+            final int lowerRandomLimit = 1;
+            int firstNumber = Engine.randomNumber(upperRandomLimit, lowerRandomLimit);
+            int secondNumber = Engine.randomNumber(upperRandomLimit, lowerRandomLimit);
 
+            result[i][0] = firstNumber + " " + mathAction + " " + secondNumber;
+
+            int trueResult = 0;
             switch (mathAction) {
                 case '*' -> {
                     trueResult = firstNumber * secondNumber;
@@ -41,7 +36,6 @@ public class Calc {
                 }
                 default -> System.out.println("PROBLEM");
             }
-            result[i][0] = mathExpression;
             result[i][1] = String.valueOf(trueResult);
         }
         Engine.theGame(result, rulesCalc);

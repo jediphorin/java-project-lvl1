@@ -2,8 +2,6 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
-
 public class Progression {
 
     public static void theProgression() {
@@ -14,26 +12,25 @@ public class Progression {
             //  массив прогрессирующих значений рандомной длины
             final int upperLengthLimit = 10;
             final int lowerLengthLimit = 5;
-            Random random = new Random();
-            int lengthProgression = random.nextInt(upperLengthLimit - lowerLengthLimit) + lowerLengthLimit;
+            int lengthProgression = Engine.randomNumber(upperLengthLimit, lowerLengthLimit);
             int[] progression = new int[lengthProgression];
 
             //  первое значение в прогрессии
             final int upperStartPositionRandomLimit = 14;
-            Random startPositionRandom = new Random();
-            int startProgression = startPositionRandom.nextInt(upperStartPositionRandomLimit - 2) + 2;
+            final int lowerStartPositionRandomLimit = 2;
+            int startProgression = Engine.randomNumber(upperStartPositionRandomLimit, lowerStartPositionRandomLimit);
 
             //  прогрессия прогрессии
             final int upperProgressionShiftRandomLimit = 6;
-            Random progressionShiftRandom = new Random();
-            int shiftProgression = progressionShiftRandom.nextInt(upperProgressionShiftRandomLimit - 2) + 2;
+            final int lowerProgressionShiftRandomLimit = 2;
+            int shift = Engine.randomNumber(upperProgressionShiftRandomLimit, lowerProgressionShiftRandomLimit);
 
             //  элемент для вопроса
-            Random elementForQuestionRandom = new Random();
-            int indexForQuestion = elementForQuestionRandom.nextInt(progression.length - 1);
+            final int elementsInProgression = progression.length - 1;
+            int indexForQuestion = Engine.randomNumber(elementsInProgression);
 
             //  заполнение прогрессии
-            for (int j = 0, k = startProgression; j < progression.length; j++, k += shiftProgression) {
+            for (int j = 0, k = startProgression; j < progression.length; j++, k += shift) {
                 progression[j] = k;
             }
 
