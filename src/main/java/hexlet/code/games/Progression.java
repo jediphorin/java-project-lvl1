@@ -62,18 +62,8 @@ public class Progression {
         for (int j = 0; j < progression.length; j++) {
             if (indexForQuestion != j) {
                 ftqNotIndexForQuestion(j, result, i, progression);
-//                if (j != 0) {
-//                    result[i][0] = result[i][0] + (" " + progression[j]);
-//                } else {
-//                    result[i][0] = String.valueOf(progression[j]);
-//                }
             } else {
                 ftqIndexForQuestion(j, result, i);
-//                if (j != 0) {
-//                    result[i][0] = result[i][0] + " ..";
-//                } else {
-//                    result[i][0] = "..";
-//                }
             }
         }
     }
