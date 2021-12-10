@@ -11,26 +11,51 @@ public class Engine {
         System.out.println(rules);
         Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < CYCLES; i++) {
-            System.out.println("Question: " + qna[i][0]);
-            System.out.print("Your answer: ");
-            String myResult = scanner.nextLine();
+            String myResult = typingMyAnswer(qna, i, scanner);
+//            System.out.println("Question: " + qna[i][0]);
+//            System.out.print("Your answer: ");
+//            String myResult = scanner.nextLine();
 
-            if ((qna[i][1].equals("yes") || qna[i][1].equals("no"))) {
+            incorrectStringChecking(qna, i, myResult);
+            /*if ((qna[i][1].equals("yes") || qna[i][1].equals("no"))) {
                 if (!myResult.equals("yes") && !myResult.equals("no")) {
                     System.out.println("'" + myResult + "' is wrong answer ;(");
                     System.exit(0);
                 }
-            }
+            }*/
 
             if (myResult.equals(qna[i][1])) {
                 System.out.println("Correct!");
             } else {
-                System.out.println("'" + myResult + "' is wrong answer ;(. Correct answer was '" + qna[i][1] + "'");
-                System.out.println("Let's try again, " + Cli.getName() + "!");
-                System.exit(0);
+                String correctAnswer = qna[i][1];
+                fail(myResult, correctAnswer);
+//                System.out.println("'" + myResult + "' is wrong answer ;(. Correct answer was '" + qna[i][1] + "'");
+//                System.out.println("Let's try again, " + Cli.getName() + "!");
+//                System.exit(0);
             }
         }
         System.out.println("Congratulations, " + Cli.getName() + "!");
+    }
+
+    private static String typingMyAnswer(String[][] qna, int i, Scanner scanner) {
+        System.out.println("Question: " + qna[i][0]);
+        System.out.print("Your answer: ");
+        return scanner.nextLine();
+    }
+
+    private static void incorrectStringChecking(String[][] qna, int i, String myResult) {
+        if ((qna[i][1].equals("yes") || qna[i][1].equals("no"))) {
+            if (!myResult.equals("yes") && !myResult.equals("no")) {
+                System.out.println("'" + myResult + "' is wrong answer ;(");
+                System.exit(0);
+            }
+        }
+    }
+
+    private static void fail(String myResult, String correctAnswer) {
+        System.out.println("'" + myResult + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'");
+        System.out.println("Let's try again, " + Cli.getName() + "!");
+        System.exit(0);
     }
 
     public static String[][] createTheArrayForQuestionsAndTrueAnswers() {
