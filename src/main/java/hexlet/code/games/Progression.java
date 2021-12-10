@@ -60,22 +60,35 @@ public class Progression {
 
     private static void fillTheQuestions(int[] progression, int indexForQuestion, String[][] result, int i) {
         for (int j = 0; j < progression.length; j++) {
-            fillTheQuestionsIf(progression, indexForQuestion, result, i, j);
+            if (indexForQuestion != j) {
+                ftqNotIndexForQuestion(j, result, i, progression);
+//                if (j != 0) {
+//                    result[i][0] = result[i][0] + (" " + progression[j]);
+//                } else {
+//                    result[i][0] = String.valueOf(progression[j]);
+//                }
+            } else {
+                ftqIndexForQuestion(j, result, i);
+//                if (j != 0) {
+//                    result[i][0] = result[i][0] + " ..";
+//                } else {
+//                    result[i][0] = "..";
+//                }
+            }
         }
     }
-    private static void fillTheQuestionsIf(int[] progression, int indexForQuestion, String[][] result, int i, int j) {
-        if (indexForQuestion != j) {
-            if (j != 0) {
-                result[i][0] = result[i][0] + (" " + progression[j]);
-            } else {
-                result[i][0] = String.valueOf(progression[j]);
-            }
+    private static void ftqIndexForQuestion(int j, String[][] result, int i) {
+        if (j != 0) {
+            result[i][0] = result[i][0] + " ..";
         } else {
-            if (j != 0) {
-                result[i][0] = result[i][0] + " ..";
-            } else {
-                result[i][0] = "..";
-            }
+            result[i][0] = "..";
+        }
+    }
+    private static void ftqNotIndexForQuestion(int j, String[][] result, int i, int[] progression) {
+        if (j != 0) {
+            result[i][0] = result[i][0] + (" " + progression[j]);
+        } else {
+            result[i][0] = String.valueOf(progression[j]);
         }
     }
 }
