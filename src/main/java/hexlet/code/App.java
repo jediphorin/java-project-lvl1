@@ -13,6 +13,9 @@ import hexlet.code.games.Calc;
 import java.util.Scanner;
 
 public class App {
+    private static final int EXIT_NUMBER = 0;
+//    private final static int GREET_NUMBER = 1;
+    private static final int EVEN_NUMBER = 2;
     private static final int CALC_NUMBER = 3;
     private static final int GDC_NUMBER = 4;
     private static final int PROGRESSION_NUMBER = 5;
@@ -25,19 +28,20 @@ public class App {
         System.out.print("Your choice: ");
         Scanner scanner = new Scanner(System.in);
         int gameNumber = scanner.nextInt();
+        if (gameNumber == EXIT_NUMBER) {
+            System.exit(0);
+        }
 
-        if (gameNumber != 0) {
-            System.out.println("\nWelcome to the Brain Games!");
-            Cli.nameSetting();
+        System.out.println("\nWelcome to the Brain Games!");
+        Engine.setName(Cli.greetings());
 
-            switch (gameNumber) {
-                case 2 -> Even.theEven();
-                case CALC_NUMBER -> Calc.theCalc();
-                case GDC_NUMBER -> GDC.theGDC();
-                case PROGRESSION_NUMBER -> Progression.theProgression();
-                case PRIME_NUMBER -> Prime.thePrime();
-                default -> {
-                }
+        switch (gameNumber) {
+            case EVEN_NUMBER -> Even.theEven();
+            case CALC_NUMBER -> Calc.theCalc();
+            case GDC_NUMBER -> GDC.theGDC();
+            case PROGRESSION_NUMBER -> Progression.theProgression();
+            case PRIME_NUMBER -> Prime.thePrime();
+            default -> {
             }
         }
     }

@@ -4,21 +4,11 @@ import java.util.Scanner;
 
 public class Cli {
 
-    private static String name;
-
-    public static String getName() {
-        return name;
-    }
-
-    public static void setName(String inputName) {
-        Cli.name = inputName;
-    }
-
-    public static void nameSetting() {
+    public static String greetings() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("May I have your name? ");
         String localName = scanner.nextLine();
         System.out.println("Hello, " + localName + "!");
-        setName(localName);
+        return localName;
     }
 }

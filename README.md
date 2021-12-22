@@ -3,8 +3,6 @@
 
 <a href="https://codeclimate.com/github/jediphorin/java-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/17d1894c16708f644c3f/maintainability" /></a>
 
-[![GitHub Actions Demo](https://github.com/jediphorin/java-project-lvl1/actions/workflows/github-actions-demo.yml/badge.svg)](https://github.com/jediphorin/java-project-lvl1/actions/workflows/github-actions-demo.yml)
-
 [![CI](https://github.com/jediphorin/java-project-lvl1/actions/workflows/main.yml/badge.svg)](https://github.com/jediphorin/java-project-lvl1/actions/workflows/main.yml)
 
 <a href="https://asciinema.org/a/rz3Ihzv9UYpDQVsBkiRtZR6yG" target="_blank"><img src="https://asciinema.org/a/rz3Ihzv9UYpDQVsBkiRtZR6yG.svg" />игра про чётные числа, с победой и поражением игрока</a>

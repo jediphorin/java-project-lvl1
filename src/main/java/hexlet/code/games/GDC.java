@@ -2,33 +2,33 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
+import hexlet.code.Utils;
+
 public class GDC {
 
+    private static final String RULES_GDC = "Find the greatest common divisor of given numbers.";
+
     public static void theGDC() {
-        final String rulesGdc = "Find the greatest common divisor of given numbers.";
-        String[][] result = Engine.createTheArrayForQuestionsAndTrueAnswers();
+        String[][] questionsToAnswers = Engine.createTheArrayForQuestionsAndTrueAnswers();
 
         for (int i = 0; i < Engine.CYCLES; i++) {
-            final int upperRandomLimit = 100;
-            final int lowerRandomLimit = 1;
-            int firstNumber = Engine.randomNumber(upperRandomLimit, lowerRandomLimit);
-            int secondNumber = Engine.randomNumber(upperRandomLimit, lowerRandomLimit);
-
-            result[i][0] = firstNumber + " " + secondNumber;
-
-            calculatingTheAnswer(firstNumber, secondNumber, result, i);
+            int firstNumber = Utils.randomNumber(Utils.UPPER_RANDOM_LIMIT, Utils.LOWER_RANDOM_LIMIT);
+            int secondNumber = Utils.randomNumber(Utils.UPPER_RANDOM_LIMIT, Utils.LOWER_RANDOM_LIMIT);
+            questionsToAnswers[i][0] = firstNumber + " " + secondNumber;
+            int theGDC = findGDC(firstNumber, secondNumber);
+            questionsToAnswers[i][1] = String.valueOf(theGDC);
         }
-        Engine.theGame(result, rulesGdc);
+        Engine.theGame(questionsToAnswers, RULES_GDC);
     }
 
-    private static void calculatingTheAnswer(int firstNumber, int secondNumber, String[][] result, int i) {
-        int trueResult;
+    private static int findGDC(int firstNumber, int secondNumber) {
+        int trueResult = 1;
         for (int min = Math.min(firstNumber, secondNumber); min > 0; min--) {
             if (firstNumber % min == 0 && secondNumber % min == 0) {
                 trueResult = min;
-                result[i][1] = String.valueOf(trueResult);
                 break;
             }
         }
+        return trueResult;
     }
 }
