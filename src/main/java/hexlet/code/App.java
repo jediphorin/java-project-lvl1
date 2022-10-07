@@ -15,7 +15,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App {
-    //    private static final int EXIT_NUMBER = 0;
+    private static final int EXIT_NUMBER = 0;
     private static final int GREET_NUMBER = 1;
     private static final int EVEN_NUMBER = 2;
     private static final int CALC_NUMBER = 3;
