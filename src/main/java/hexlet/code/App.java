@@ -10,11 +10,13 @@ import hexlet.code.games.Even;
 
 import hexlet.code.games.Calc;
 
+import java.util.InputMismatchException;
+
 import java.util.Scanner;
 
 public class App {
-    private static final int EXIT_NUMBER = 0;
-//    private final static int GREET_NUMBER = 1;
+    //    private static final int EXIT_NUMBER = 0;
+    private static final int GREET_NUMBER = 1;
     private static final int EVEN_NUMBER = 2;
     private static final int CALC_NUMBER = 3;
     private static final int GDC_NUMBER = 4;
@@ -26,9 +28,16 @@ public class App {
         System.out.print("Please enter the game number and press Enter.");
         System.out.println("\n1 - Greet\n2 - Even\n3 - Calc\n4 - GDC\n5 - Progression\n6 - Prime\n0 - Exit");
         System.out.print("Your choice: ");
+
         Scanner scanner = new Scanner(System.in);
-        int gameNumber = scanner.nextInt();
-        if (gameNumber == EXIT_NUMBER) {
+        int gameNumber = -1;
+
+        try {
+            gameNumber = scanner.nextInt();
+        } catch (InputMismatchException e) {
+            System.exit(0);
+        }
+        if (gameNumber < GREET_NUMBER || gameNumber > PRIME_NUMBER) {
             System.exit(0);
         }
 
