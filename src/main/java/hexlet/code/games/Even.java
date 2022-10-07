@@ -6,7 +6,7 @@ import hexlet.code.Utils;
 
 public class Even {
 
-    private static final String RULES_EVEN = "Answer 'yes' if number even otherwise answer 'no'.";
+    private static final String RULES_EVEN = "Answer 'yes' if the number even otherwise answer 'no'.";
 
     public static void theEven() {
         String[][] questionsToAnswers = Engine.createTheArrayForQuestionsAndTrueAnswers();
